@@ -22,7 +22,7 @@ class CreateSpecificationUseCase {
             throw new Error("Specification alredy exists!");
         }
 
-        this.specificationRepository.create({ name, description });
+        await this.specificationRepository.create({ name, description });
     }
 }
 
