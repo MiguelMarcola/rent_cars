@@ -9,8 +9,6 @@ import {
 class CategoriesRepository implements ICategoriesRespository {
     private repository: Repository<Category>;
 
-    private static INSTANCE: CategoriesRepository;
-
     constructor() {
         this.repository = getRepository(Category);
     }
