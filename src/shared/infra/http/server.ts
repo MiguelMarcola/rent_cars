@@ -10,7 +10,7 @@ import { router } from "./routes";
 
 import "../typeorm";
 
-import "../../container";
+import "@shared/container";
 
 const app = express();
 
