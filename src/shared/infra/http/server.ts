@@ -6,19 +6,16 @@ import "reflect-metadata";
 import { AppError } from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
-import { router } from "./routes";
-
-import "../typeorm";
+import createConnection from "../typeorm";
 
 import "@shared/container";
 
+createConnection();
 const app = express();
 
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
-app.use(router);
 
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
